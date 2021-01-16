@@ -1,13 +1,13 @@
 <?php
 
-class IdAttribute implements InsertAttributeInterface {
+class IdAttribute implements VerifyAttributeValueInterface {
   /**
   * autenticação de identificação única
   * @param string $id identificação única
   * @return mixed
   */
-  static public function insert (string $id) {
-    if (defined("IdAttributeEnumerate::{$id}")) {
+  static public function verify ($id) {
+    if (defined("VerifyAttributeValueInterface::{$id}")) {
       return $id;
     } else {
       throw new ValueError();

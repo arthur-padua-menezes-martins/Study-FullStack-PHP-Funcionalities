@@ -1,12 +1,12 @@
 <?php
 
-class MethodAttribute implements InsertAttributeInterface {
+class MethodAttribute implements VerifyAttributeValueInterface {
   /**
   * autenticação de tipo de método
   * @param string $method tipo de método
   * @return mixed
   */
-  static public function insert(string $method) {
+  static public function verify($method) {
     if (defined("MethodAttributeEnumerate::{$method}")) {
       return $method;
     } else {

@@ -1,12 +1,12 @@
 <?php
 
-class ClassesAttribute extends InsertAttributeInterface {
+class ClassesAttribute implements VerifyAttributeValueInterface {
   /**
   * autenticação de classes de identificação
   * @param array $classes classes de identificação
   * @return void
   */
-  static public function insert(array $classes) {
+  static public function verify($classes) {
     return $classes;
   }
 }

@@ -3,11 +3,11 @@
 interface ValidateProxyInterface {
   /**
   * valida determinada propriedade
-  * @param mixed $property propriedade a ser validada
+  * @param mixed $property propriedade da validação
   * @param mixed $dependencies dependências para a validação
   * @return mixed
   */
-  public function validate (mixed &$property, mixed $dependencies);
+  public function validate($property, $dependencies);
 }
 
 ?>

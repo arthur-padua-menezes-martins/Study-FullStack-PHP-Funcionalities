@@ -24,16 +24,17 @@ class AppLoader {
   public function load_class(string $file) {
     $folders = $this->directories;
     print $file;
+    print '</br>';
     foreach ($folders as $folder) {
       $class_file_path = "{$folder}/{$file}.class.php";
       $interface_file_path = "{$folder}/{$file}.interface.php";
 
       if (file_exists($class_file_path)) {
         require_once $class_file_path;
-        return TRUE;
+        return true;
       } else if (file_exists($interface_file_path)) {
         require_once $interface_file_path;
-        return TRUE;
+        return true;
       } else {
         $recursive_directory = new RecursiveDirectoryIterator($folder);
 
@@ -44,10 +45,10 @@ class AppLoader {
           if (is_dir($entry)) {
             if (file_exists($class_file_path)) {
               require_once $class_file_path;
-              return TRUE;
+              return true;
             } else if (file_exists($interface_file_path)) {
               require_once $interface_file_path;
-              return TRUE;
+              return true;
             }
           }
         }
